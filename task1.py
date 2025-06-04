@@ -29,16 +29,19 @@ def get_days_from_today(input_date: str) -> int:
         input_date_datatime = datetime.strptime(input_date, '%Y-%m-%d')
     # Обробка винятку, якщо формат дати неправильний
     except ValueError:
+        # Отримання повідомлення про помилку і виведення його користувачу
         raise ValueError("Неправильний формат дати. Використовуйте 'РРРР-ММ-ДД'.")
     # Отримання поточної дати
     today = datetime.today()
     # Розрахунок різниці у днях
     delta = (today - input_date_datatime).days
     return delta
+
+
 # Створення циклу для багаторазового запиту дати у користувача
 while True:
     # Запит дати у користувача
-    input_date = input("Введіть дату у форматі 'РРРР-ММ-ДД' (або 'Enter' для завершення): ")
+    input_date = input("Введіть дату у форматі 'РРРР-ММ-ДД' (натисніть 'Enter' без введення дати для завершення): ")
     # Перевірка на вихід з циклу
     if input_date==input_date.strip() == '':
         print("Завершення програми.")
