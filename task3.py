@@ -81,8 +81,8 @@ def normalize_phone(phone_number: str) -> str:
     # Перевіряємо, чи номер починається з '+'
     if cleaned_number.startswith('+'):
         return cleaned_number
-    elif cleaned_number.startswith('380'):
-        return '+' + cleaned_number[3:]  # Додаємо '+' перед номером без '380'
+    elif cleaned_number.startswith('38'):
+        return '+' + cleaned_number  # Додаємо '+' перед номером  '38'
     else:
         return '+38' + cleaned_number  # Додаємо код країни '+38'
 
